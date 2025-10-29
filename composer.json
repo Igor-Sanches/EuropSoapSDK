@@ -1,6 +1,6 @@
 {
   "name": "igor-sanches/europ-soap-sdk",
-  "description": "SDK SOAP para integração com Europ Assistance",
+  "description": "SDK SOAP para integração com Europ Assistance.",
   "type": "library",
   "license": "MIT",
   "authors": [
