@@ -1,27 +1,29 @@
 {
-    "name": "igor-sanches/europ-soap-sdk",
-    "description": "SDK da NeoRede",
-    "type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Igor D. Sanches",
-            "email": "igordutra20141997@gmail.com"
-        }
+  "name": "igor-sanches/europ-soap-sdk",
+  "description": "SDK SOAP para integração com Europ Assistance",
+  "keywords": ["europ", "sdk"],
+  "homepage": "https://github.com/Igor-Sanches/europ-soap-sdk",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Igor D. Sanches",
+      "email": "igordutra20141997@gmail.com"
+    }
+  ],
+  "autoload": {
+    "files": [
+      "src/helpers/helpers.php"
     ],
-    "autoload": {
-        "files": [
-            "src/helpers/helpers.php"
-        ],
-        "psr-4": {
-            "EuropSoapSDK\\": "src/"
-        }
-    },
-    "require": {
-        "php": ">=8.1",
-        "ext-curl": "*",
-        "ext-soap": "*"
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "psr-4": {
+      "EuropSoapSDK\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=8.1",
+    "ext-curl": "*",
+    "ext-soap": "*"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
