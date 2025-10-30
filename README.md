@@ -4,7 +4,7 @@ Uma integração rápida e eficaz com a API da EuropSoap
 
 ## Adicionar o SDK ao projeto
 ```
-composer require igor-sanches/neo-rede-sdk
+composer require igor-sanches/europ-soap-sdk
 ```
 
 ## Etapas de configurações.
