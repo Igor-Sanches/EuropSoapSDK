@@ -8,18 +8,17 @@ use Exception;
 
 class EuropSoapSDK
 {
+    private $movementType;
+
     public function __construct(
         private readonly string $username,
         private readonly string $password,
         private readonly String $wsdl,
     ) {}
 
-    public function beneficiario(array $dataArr, String $movementType): array
+    public function beneficiario(array $arr): array
     {
         try {
-
-            $arr = $this->validateData($dataArr, $movementType);
-
             // Converter as datas para os padrões da Europ
             $policyIssueDate = format_datetime_europ($arr['data_emissao_apolice'] ?? '');
             $effectiveStartDate = format_datetime_europ($arr['data_inicio_vigencia'] ?? '');
@@ -32,7 +31,7 @@ class EuropSoapSDK
                 'WS_SEGURO_RERequestElement' => [
                     'Identificacao_Cliente' => 'REDE ASSIST 24H TELEASSISTENCIA',
                     'Email_Retorno' => $arr['email_retorno'] ?? '',
-                    'Tipo_Movimento' => $movementType,
+                    'Tipo_Movimento' => $this->movementType,
                     'Chave' => $arr['chave'] ?? '',
                     'Numero_Item_Apolice' => $arr['numero_item_apolice'] ?? '',
                     'Flag_VIP' => $arr['flag_vip'] ?? '',
@@ -89,8 +88,9 @@ class EuropSoapSDK
     /**
      * @throws Exception
      */
-    private function validateData(array $data, String $movementType): array
+    public function validateData(array $data, String $movementType): array
     {
+        $this->movementType = $movementType;
         // Criar a chave única para o Europ
         $randomValue = rand();
         $timestamp = time();

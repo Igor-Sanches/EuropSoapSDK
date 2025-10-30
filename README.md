@@ -30,17 +30,20 @@ $sdk = new EuropSoapSDK($username, $password, $wsdl);
 
 # Cadastrar novo beneficiário
 ```php
-$result = $sdk->beneficiario($arr, MovementType::INSERT);
+$arr = $sdk->validateData($request->all(), MovementType::INSERT);
+$result = $sdk->beneficiario($arr);
 ```
 
 # Atualizar beneficiário
 ```php
-$result = $sdk->beneficiario($arr, MovementType::UPDATE);
+$arr = $sdk->validateData($request->all(), MovementType::UPDATE);
+$result = $sdk->beneficiario($arr); 
 ```
 
 # Remover beneficiário
 ```php
-$result = $sdk->beneficiario($arr, MovementType::DELETE);
+$arr = $sdk->validateData($request->all(), MovementType::DELETE);
+$result = $sdk->beneficiario($arr);  
 ```
 
 # Respostas do SDK
