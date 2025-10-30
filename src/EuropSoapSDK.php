@@ -14,11 +14,11 @@ class EuropSoapSDK
         private readonly String $wsdl,
     ) {}
 
-    public function beneficiario(array $data, String $movementType): array
+    public function beneficiario(array $dataArr, String $movementType): array
     {
         try {
 
-            $arr = $this->validateData($data, $movementType);
+            $arr = $this->validateData($dataArr, $movementType);
 
             // Converter as datas para os padrões da Europ
             $policyIssueDate = format_datetime_europ($arr['data_emissao_apolice'] ?? '');

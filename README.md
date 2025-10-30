@@ -1,6 +1,6 @@
-## SDK NeoRede
+## SDK EuropSoap
 
-Uma integração rápida e eficaz com a API da NeoRede
+Uma integração rápida e eficaz com a API da EuropSoap
 
 ## Adicionar o SDK ao projeto
 ```
