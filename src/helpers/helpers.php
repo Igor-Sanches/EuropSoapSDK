@@ -5,7 +5,7 @@ if(!function_exists('format_telephone')){
      * @param $value
      * @return array|string|string[]|null
      */
-    function format_telephone($value): array|string|null
+    function format_telephone($value)
     {
         if(empty($value)){
             return null;
@@ -16,7 +16,7 @@ if(!function_exists('format_telephone')){
 }
 
 if(!function_exists('type_person_europ')){
-    function type_person_europ($person_type): string
+    function type_person_europ($person_type)
     {
         return $person_type == "PF" ? "Fisica" : "Juridica";
     }
@@ -27,7 +27,7 @@ if(!function_exists('format_cpf')){
      * @param $value
      * @return string|null
      */
-    function format_cpf($value): ?string
+    function format_cpf($value)
     {
         if(empty($value)){
             return null;
@@ -42,7 +42,7 @@ if(!function_exists('format_datetime_europ')){
      * @param $value
      * @return string|null
      */
-    function format_datetime_europ($value): ?string
+    function format_datetime_europ($value)
     {
         if(empty($value)){
             return null;

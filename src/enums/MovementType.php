@@ -2,7 +2,7 @@
 
 namespace EuropSoapSDK\enums;
 
-enum MovementType
+class MovementType
 {
     const INSERT = 'IN'; // Inserção
     const UPDATE = 'AL'; // Alteração

@@ -9,14 +9,18 @@ use Exception;
 class EuropSoapSDK
 {
     private $movementType;
+    private string $username;
+    private string $password;
+    private string $wsdl;
 
-    public function __construct(
-        private readonly string $username,
-        private readonly string $password,
-        private readonly String $wsdl,
-    ) {}
+    public function __construct($username, $password, $wsdl)
+    {
+        $this->username = $username;
+        $this->password = $password;
+        $this->wsdl = $wsdl;
+    }
 
-    public function beneficiario(array $arr): array
+    public function beneficiario($arr)
     {
         try {
             // Converter as datas para os padrões da Europ
@@ -67,7 +71,7 @@ class EuropSoapSDK
             $response = $client->__soapCall("WS_REDE_ASSISTENCIAOperation", [$requestParams]);
             $WS_SEGURO_REResponseElement = $response->WS_SEGURO_REResponseElement;
             $Operation_Type = $WS_SEGURO_REResponseElement->Operation_Type;
-            if($Operation_Type != 'PROCESSADO'){
+            if ($Operation_Type != 'PROCESSADO') {
                 throw new Exception($WS_SEGURO_REResponseElement->MsgError);
             }
             return [
@@ -88,7 +92,7 @@ class EuropSoapSDK
     /**
      * @throws Exception
      */
-    public function validateData(array $data, String $movementType): array
+    public function validateData($data, $movementType)
     {
         $this->movementType = $movementType;
         // Criar a chave única para o Europ
