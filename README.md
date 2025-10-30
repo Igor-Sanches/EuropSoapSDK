@@ -2,7 +2,7 @@
 
 Uma integração rápida e eficaz com a API da EuropSoap
 
-## Adicionar o SDK ao projeto
+## Adicionar o SDK
 ```
 composer require igor-sanches/europ-soap-sdk
 ```
