@@ -12,11 +12,9 @@ class EuropSoapSDK
         private readonly string $username,
         private readonly string $password,
         private readonly String $wsdl,
-    )
-    {
-    }
+    ) {}
 
-    public function cadastrarBeneficiario(array $data, String $movementType): array
+    public function beneficiario(array $data, String $movementType): array
     {
         try {
 
